@@ -20,7 +20,7 @@ Contains all methods (aside from the training loop) for the evolutionary algorit
 Randomly generates a single edge. Used in initializing the finite automata and both micro and macro mutations.
 
 * initalize_fa()  
-Initializes a single finite automata, following the procedure described in section 2.2 of the paper.
+Initializes a single finite automata.
 
 * initialize_pop()  
 Initializes the population, calling initialize_fa() to generate individuals.
@@ -65,7 +65,7 @@ Contains methods for generating the training instances, formatting the datasets,
 Loads the configuration arguments present in configs.conf into a dictionary so that they can be easily passed around.
 
 * generate_word()  
-Randomly generates a single word given a regular expression. The argument max_repeats controls the maximum number of times a Kleene star * can repeat something. Will first resolve the repeats, parsing them from right to left and resulting in a regular expression without any *'s. Will then parse the +'s from left to right, randomly sampling from the options to produce the final generated word.
+Randomly generates a single word given a regular expression. The argument max_repeats controls the maximum number of times a Kleene star * can repeat something. Will first resolve the repeats, parsing them from right to left and resulting in a regular expression without any \*'s. Will then parse the +'s from left to right, randomly sampling from the options to produce the final generated word.
 
 * generate_dataset()  
 Builds a dataset of a specified size given a regular expression by repeatedly calling generate_word(). Uses a set to ensure there are no duplicates, terminates the generation process once the set has the specified number of words. Returns the data split into training and testing sets.
